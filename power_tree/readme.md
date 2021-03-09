@@ -178,3 +178,7 @@ This board was initially designed with the assumption that the ESP would not hav
 This brings down the waste power significantly, and should result in the board being more stable.
 
 ![](real_example_dcdc.png)
+
+# Conclusion
+
+This tool is designed to make quick sketches of your power design, without getting too bogged down in the details. It's always a good idea to desgin in some margin to your designs, and to test them once they're built to make sure the theory lines up with reality. If this has been helpful to you, please let us know!
