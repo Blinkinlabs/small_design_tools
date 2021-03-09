@@ -1,0 +1,28 @@
+digraph test {
+  rankdir=LR;
+  splines=false;
+  rank="same";
+
+  node [fixedsize="true", width="3", height="1", shape="polygon",sides=4]
+  graph [style="invis"]  "5V wall wart" [label="5V wall wart\ninput: 7.16W (1.43A@5.00V)",style="filled"];
+  "5V wall wart":e -> "12V supply for control boards":w [];
+  "12V supply for control boards" [label="12V supply for control boards\ninput: 1.41W (0.28A@5.00V)\noutput: 1.20W (0.10A@12.00V)\nEfficiency:85% waste:0.21W",style="filled"];
+  "12V supply for control boards":e -> "button controller":w [];
+  "button controller" [label="button controller\n1.20W (0.10A@12.00V)"];
+  "5V wall wart":e -> "LED buffer":w [];
+  "LED buffer" [label="LED buffer\n0.25W (0.05A@5.00V)"];
+  "5V wall wart":e -> "3.3V linear supply":w [];
+  "3.3V linear supply" [label="3.3V linear supply\ninput: 5.50W (1.10A@5.00V)\noutput: 3.63W (1.10A@3.30V)\nEfficiency:66% waste:1.87W",style="filled"];
+  "3.3V linear supply":e -> "ESP32, BLE enabled":w [];
+  "ESP32, BLE enabled" [label="ESP32, BLE enabled\n0.82W (0.25A@3.30V)"];
+  "3.3V linear supply":e -> "microSD card, writing":w [];
+  "microSD card, writing" [label="microSD card, writing\n0.66W (0.20A@3.30V)"];
+  "3.3V linear supply":e -> "FPGA IO pins":w [];
+  "FPGA IO pins" [label="FPGA IO pins\n0.17W (0.05A@3.30V)"];
+  "3.3V linear supply":e -> "RS422 transceiver, short condition":w [];
+  "RS422 transceiver, short condition" [label="RS422 transceiver, short condition\n1.32W (0.40A@3.30V)"];
+  "3.3V linear supply":e -> "1.2V linear supply":w [];
+  "1.2V linear supply" [label="1.2V linear supply\ninput: 0.66W (0.20A@3.30V)\noutput: 0.24W (0.20A@1.20V)\nEfficiency:36% waste:0.42W",style="filled"];
+  "1.2V linear supply":e -> "FPGA core":w [];
+  "FPGA core" [label="FPGA core\n0.24W (0.20A@1.20V)"];
+}

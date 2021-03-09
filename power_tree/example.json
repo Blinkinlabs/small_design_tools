@@ -1,0 +1,64 @@
+{
+    "type": "powersupply",
+    "name": "5V wall wart",
+    "voltage": 5,
+    "loads" : [
+        {
+            "type": "dcdc",
+            "name": "12V supply for control boards",
+            "voltage": 12,
+            "efficiency": 0.85,
+            "loads": [
+                {
+                    "type": "load",
+                    "name": "button controller",
+                    "max_current": 0.1
+                }
+            ]
+        },
+        {
+            "type": "load",
+            "name": "LED buffer",
+            "max_current": 0.05
+        },
+        {
+            "type": "linear",
+            "name": "3.3V linear supply",
+            "voltage": 3.3,
+            "loads" : [
+                {
+                    "type": "load",
+                    "name": "ESP32, BLE enabled",
+                    "max_current": 0.25
+                },
+                {
+                    "type": "load",
+                    "name": "microSD card, writing",
+                    "max_current": 0.2
+                },
+                {
+                    "type": "load",
+                    "name": "FPGA IO pins",
+                    "max_current": 0.05
+                },
+                {
+                    "type": "load",
+                    "name": "RS422 transceiver, short condition",
+                    "max_current": 0.4
+                },
+                {
+                    "type": "linear",
+                    "name": "1.2V linear supply",
+                    "voltage": 1.2,
+                    "loads" : [
+                        {
+                            "type": "load",
+                            "name": "FPGA core",
+                            "max_current": 0.2
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
