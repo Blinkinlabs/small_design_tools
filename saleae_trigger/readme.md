@@ -2,7 +2,7 @@
 
 ![](demo.gif)
 
-The Saleae logic analyzer is quite convenient for debugging your embedded design, but when you're hours into hunting down a bug, manually clicking start just before you load new code onto your device gets old. There's a simple way around this! The Logic 1.2.29 software has a simple remote control interface, complete with a convenient Python library to interface with it. You *could* use this to perform automated testing, but let's start with just automating our debugging a little.
+The Saleae logic analyzer is quite convenient for debugging your embedded design, but when you're hours into hunting down a bug, manually clicking start just before you load new code onto your device gets old. There's a simple way around this! The Logic 1.2.29 software has a simple remote control interface, complete with a convenient Python library to interface with it. You *can* use this to perform automated testing, but let's start with just automating our debugging a little.
 
 ## Requirements:
 * Saleae logic analyzer
